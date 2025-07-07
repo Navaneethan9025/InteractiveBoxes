@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOGO Offer</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      max-width: 400px;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #FF4D88;
+      margin-bottom: 30px;
+    }
+    .option {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      position: relative;
+      cursor: pointer;
+      transition: max-height 1.2s ease;
+      overflow: hidden;
+      max-height: 10px;
+    }
+    .option.expanded {
+      max-height: 700px;
+      background-color: #FFF0F5;
+    }
+    .option label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .option input[type="radio"] {
+      transform: scale(2);
+      margin-right: 20px;
+    }
+    .discount {
+      background-color: #FF4D88;
+      color: white;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
+    .price {
+      display: inline-block;
+      font-weight: bold;
+      float: right;
+    }
+    .old-price {
+      text-decoration: line-through;
+      font-size: 12px;
+      color: grey;
+      margin-left: 5px;
+    }
+    .most-popular {
+      position: absolute;
+      top: -2px;
+      right: 0px;
+      background-color: #FF4D88;
+      color: white;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 0 0 5px 5px;
+    }
+    .dropdowns {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .dropdowns select {
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 14px;
+      align-items: center;
+    }
+    .total {
+      font-weight: bold;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #FF4D88;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    .powered {
+      text-align: center;
+      font-size: 12px;
+      color: gray;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+     <h2>YAY! It’s BOGO</h2>
+
+    <div class="option" onclick="toggleExpand(this)">
+      <label><span><input type="radio" name="unit" value="1"> 1 Unit <span class="discount">10% Off</span></span>
+        <span class="price">$10.00 USD <span class="old-price">$24.00 USD</span></span></label>
+      <div class="dropdowns">
+         <div>
+          <label>#1</label><br>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+        </div>
+        <div>
+          <label>#2</label><br>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Colour</option>
+            <option>Blue</option>
+            <option>Green</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" onclick="toggleExpand(this)">
+      <span class="most-popular">MOST POPULAR</span>
+      <label><span><input type="radio" name="unit" value="2"> 2 Unit <span class="discount">20% Off</span></span><span class="price">$18.00 USD <span class="old-price">$24.00 USD</span></span></label>
+      <div class="dropdowns">
+         <div>
+          <label>#1</label><br>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+        </div>
+        <div>
+          <label>#2</label><br>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Colour</option>
+            <option>Blue</option>
+            <option>Green</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" onclick="toggleExpand(this)">
+      <label><span><input type="radio" name="unit" value="3"> 3 Unit <span class="discount">20% Off</span></span>
+        <span class="price">$24.00 USD <span class="old-price">$24.00 USD</span></span></label>
+      <div class="dropdowns">
+         <div>
+          <label>#1</label><br>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+          </select>
+        </div>
+        <div>
+          <label>#2</label><br>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Colour</option>
+            <option>Blue</option>
+            <option>Green</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+     <div class="footer">
+      <span style="color: #FF4D88;">Free Delivery</span>
+      <span class="total">Total : $18.00 USD</span>
+    </div>
+    <button class="btn">+ Add to Cart</button>
+
+    <div class="powered">@ Powered by Pumper</div>
+  </div>
+
+  <script>
+    function toggleExpand(element) {
+      const alreadyExpanded = element.classList.contains('expanded');
+      document.querySelectorAll('.option').forEach(opt => opt.classList.remove('expanded'));
+      if (!alreadyExpanded) {
+        element.classList.add('expanded');
+        element.querySelector('input[type="radio"]').checked = true;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const secondBox = document.querySelectorAll(".option")[5];
+      secondBox.classList.add("expanded");
+      secondBox.querySelector('input[type="radio"]').checked = true;
+    });
+  </script>
+</body>
+</html>
